@@ -15,6 +15,32 @@ php artisan make:provider ComposerServiceProvider
 add provider to config\app.php
 Change debug to true in app.php
 
+## Instalation on 000webhost.com
+
+Before updloading
+Make sure to upload in root folder of remote server and not in public_html.
+Upload everything in `public` to `public_html`.
+
+Create `.env` from `.env.example`. And update the config data in it. DB_DATABASE...
+Run `composer install`.
+Run sql in one-p-c.sql
+
+If database connection failed reading the `.env` file then change the `config\database.php` creds.
+Be carefull to use `localhost` instead of `127.0.0.1` when asked by the provider.
+
+Also in `config\app.php` update the `env('APP_KEY'`
+Update css if needed with
+
+```
+
+*[href*="000webhost"],
+*[src*="000webhost"],
+*[title*="000webhost"],
+*[alt*="000webhost"] {
+  display: none;
+}
+```
+
 ### Dependencies
 
  - resources\views
